@@ -152,42 +152,88 @@ function checkWinner(avgDolphins, avgKoalas) {
 }
 checkWinner(scoreDolphins, scoreKoalas);
 
-/////arrays
+////////////////////////////////////////
+//arrays - lecture 1
 
+// const friends = ["Michael", "Steven", "Peter"];
+// console.log(friends);
+
+// const years = new Array(1991, 1984, 2008, 2020);
+// console.log(friends[0]);
+// console.log(friends[2]);
+
+// console.log(friends.length);
+// console.log(friends.length - 1); // last element of the array
+
+// friends[2] = "Jay";
+// console.log(friends);
+
+// //friends = ['Bob', 'Alice']; //we can replace some elements in the array but can't replace array itsels when it is const
+
+// const myFirstName = "Victoria";
+// const victoria = [myFirstName, "Panidi", 2024 - 1994, "student", friends];
+// console.log(victoria);
+
+// //Exercise
+// const calcAge = function (birthYear) {
+//   return 2024 - birthYear;
+// };
+
+// const allYears = [1990, 1967, 2002, 2010, 2014];
+// console.log(calcAge(allYears)); // result: NaN
+// const ageYear1 = calcAge(allYears[0]);
+// const ageYear2 = calcAge(allYears[1]);
+// const ageYear3 = calcAge(allYears[allYears.length - 1]);
+// console.log(ageYear1, ageYear2, ageYear3);
+
+// const ages = [
+//   calcAge(allYears[0]),
+//   calcAge(allYears[1]),
+//   calcAge(allYears[allYears.length - 1]),
+// ];
+// console.log(ages);
+
+////////////////////////////////////////////////////////////////
+///////arrays - lecture 2
+
+//Add elements
 const friends = ["Michael", "Steven", "Peter"];
+friends.push("Jay"); //adds element to the end of the array
 console.log(friends);
 
-const years = new Array(1991, 1984, 2008, 2020);
-console.log(friends[0]);
-console.log(friends[2]);
-
-console.log(friends.length);
-console.log(friends.length - 1); // last element of the array
-
-friends[2] = "Jay";
+friends.unshift("John"); // adds element to the beginning of the array
 console.log(friends);
 
-//friends = ['Bob', 'Alice']; //we can replace some elements in the array but can't replace array itsels when it is const
+//if we store new elements in a variable, it returns new lenghth of the array
+const newLength = friends.push("Manana");
+console.log(newLength);
+console.log(friends);
 
-const myFirstName = "Victoria";
-const victoria = [myFirstName, "Panidi", 2024 - 1994, "student", friends];
-console.log(victoria);
+//Remove elements
+friends.pop(); //removes last element
+console.log(friends);
 
-//Exercise
-const calcAge = function (birthYear) {
-  return 2024 - birthYear;
-};
+const popped = friends.pop();
+console.log(popped); //returns the removed element
+console.log(friends);
 
-const allYears = [1990, 1967, 2002, 2010, 2014];
-console.log(calcAge(allYears)); // result: NaN
-const ageYear1 = calcAge(allYears[0]);
-const ageYear2 = calcAge(allYears[1]);
-const ageYear3 = calcAge(allYears[allYears.length - 1]);
-console.log(ageYear1, ageYear2, ageYear3);
+friends.shift(); //removes first elements of the array
+console.log(friends);
 
-const ages = [
-  calcAge(allYears[0]),
-  calcAge(allYears[1]),
-  calcAge(allYears[allYears.length - 1]),
-];
-console.log(ages);
+console.log(friends.indexOf("Steven"));
+console.log(friends.indexOf("Bob")); // if we refer to the elements that is not in the array, we will get -1
+
+//includes method return true or falce value if it is elemts is presented in the array
+friends.push(23);
+console.log(friends.includes("Steven"));
+console.log(friends.includes("Bob"));
+console.log(friends.includes("23"));
+//includes method uses strict equality to check elements, so if we add 23 as a number value and then check the 23 string, it wouldn't work and will return the false, because strict equality doesn't make type coercion
+//but if we check number 23 it is going to work
+console.log(friends.includes(23));
+
+//And so we can use the include method to write conditionals.
+//So that's one of the very useful application of this method.
+if (friends.includes("Peter")) {
+  console.log("You have a friend called Peter");
+}
