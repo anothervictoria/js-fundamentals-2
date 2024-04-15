@@ -151,3 +151,43 @@ function checkWinner(avgDolphins, avgKoalas) {
   }
 }
 checkWinner(scoreDolphins, scoreKoalas);
+
+/////arrays
+
+const friends = ["Michael", "Steven", "Peter"];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends.length - 1); // last element of the array
+
+friends[2] = "Jay";
+console.log(friends);
+
+//friends = ['Bob', 'Alice']; //we can replace some elements in the array but can't replace array itsels when it is const
+
+const myFirstName = "Victoria";
+const victoria = [myFirstName, "Panidi", 2024 - 1994, "student", friends];
+console.log(victoria);
+
+//Exercise
+const calcAge = function (birthYear) {
+  return 2024 - birthYear;
+};
+
+const allYears = [1990, 1967, 2002, 2010, 2014];
+console.log(calcAge(allYears)); // result: NaN
+const ageYear1 = calcAge(allYears[0]);
+const ageYear2 = calcAge(allYears[1]);
+const ageYear3 = calcAge(allYears[allYears.length - 1]);
+console.log(ageYear1, ageYear2, ageYear3);
+
+const ages = [
+  calcAge(allYears[0]),
+  calcAge(allYears[1]),
+  calcAge(allYears[allYears.length - 1]),
+];
+console.log(ages);
