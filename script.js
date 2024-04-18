@@ -286,3 +286,60 @@ calcTip(bills[2]);
 // console.log(
 //   `The bill was ${bill}, the tip was ${tip}, and the total value ${totalValue}`
 // );
+
+//INTRODUCTION TO OBJECTS:
+
+//But in arrays,there is no way of giving these elements a name. And so we can't reference them by name,but only by their o rder number in which they appear in the array.
+
+const jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+
+//we have the object which contains 5 key-value pairs
+// each of these keys is also calles a property. So we say that this object here which is called Jonas has five properties. So property first name with the value 'Jonas'.
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991, //we can put any expression
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+};
+
+console.log(jonas);
+
+//to get the property value we use dot notation. Needs real property name.
+console.log(jonas.lastName);
+
+//we use or bracket notation
+console.log(jonas["lastName"]);
+
+const nameKey = "Name";
+console.log(jonas["first" + nameKey]);
+console.log(jonas["last" + nameKey]);
+
+const interestedIn = prompt(
+  "What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends"
+);
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log(
+    "Wrong request! Choose between firstName, lastName, age, job, and friends"
+  );
+}
+
+//adding properties to the object
+jonas.location = "Portugal";
+jonas["twitter"] = "@jonasschmedtman";
+console.log(jonas);
+
+//Challenge
+//'Jonas has 3 friends, and his best friend is called Michael'
+console.log(
+  `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
+);
