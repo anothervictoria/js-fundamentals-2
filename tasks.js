@@ -51,20 +51,29 @@
 //5 DAVALEBA
 //pirveli ramdenime
 
-const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
-const n = 2;
+// const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
+// const n = 2;
 
-//თქვენი დავალებაა ამ მასივიდან ამოიღოთ პირველი n ელემენტი და ჩაწეროთ მასივში
-const newArray = [];
+// //თქვენი დავალებაა ამ მასივიდან ამოიღოთ პირველი n ელემენტი და ჩაწეროთ მასივში
+// const newArray = [];
+
+// for (let i = 0; i < n; i++) {
+//   newArray[newArray.length] = array[i];
+// }
+// console.log(newArray);
 
 //6 DAVALEBA
 //bolo ramdenime
 
 // const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
 // const n = 2;
-
 // //თქვენი დავალებაა ამ მასივიდან ამოიღოთ ბოლო n ელემენტი და ჩაწეროთ მასივში
 // const newArray = [];
+
+// for (let i = array.length - n; i < array.length; i++) {
+//   newArray[newArray.length] = array[i];
+// }
+// console.log(newArray);
 
 //7 DAVALEBA
 //პირველი n-is გარდა
@@ -75,10 +84,117 @@ const newArray = [];
 // //თქვენი დავალებაა ამ მასივიდან ამოიღოთ ყველა ელემენტი გარდა პირველი n-ისა და ჩაწეროთ მასივში:
 // const newArray = [];
 
+// for (let i = n; i < array.length; i++) {
+//   newArray[newArray.length] = array[i];
+// }
+// console.log(newArray);
+
 //8 DAVALEBA
 
 // const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
-//const n = 3;
+// const n = 3;
 
-// //თქვენი დავალებაა ამ მასივიდან ამოიღოთ ყველა ელემენტი გარდა პირველი n-ისა და ჩაწეროთ მასივში:
+// //თქვენი დავალებაა ამ მასივიდან ამოიღოთ ყველა ელემენტი გარდა ბოლო n-ისა და ჩაწეროთ მასივში:
 // const newArray = [];
+
+// for (let i = 0; i < array.length - n; i++) {
+//   newArray[newArray.length] = array[i];
+// }
+// console.log(newArray);
+
+//9 DAVALEBA
+
+// [
+//   {
+//     university: "University of Oxford",
+//     location: "Oxford, England",
+//     established: 1096,
+//     departments: [
+//       { name: "Physics", chair: "Dr. Emily Stark" },
+//       { name: "Philosophy", chair: "Dr. John Locke" },
+//     ],
+//     notable_alumni: [
+//       { name: "Stephen Hawking", degree: "PhD, Physics" },
+//       { name: "Oscar Wilde", degree: "BA, English" },
+//     ],
+//   },
+//   {
+//     university: "Harvard University",
+//     location: "Cambridge, MA, USA",
+//     established: 1636,
+//     departments: [
+//       { name: "Economics", chair: "Dr. Lisa Genova" },
+//       { name: "Biology", chair: "Dr. Charles Darwin" },
+//     ],
+//     notable_alumni: [
+//       { name: "Barack Obama", degree: "JD, Law" },
+//       { name: "Mark Zuckerberg", degree: "Dropped out" },
+//     ],
+//   },
+//   {
+//     university: "Stanford University",
+//     location: "Stanford, CA, USA",
+//     established: 1885,
+//     departments: [
+//       { name: "Computer Science", chair: "Dr. Ada Lovelace" },
+//       { name: "Chemical Engineering", chair: "Dr. Marie Curie" },
+//     ],
+//     notable_alumni: [
+//       { name: "Elon Musk", degree: "BS, Physics" },
+//       { name: "Reed Hastings", degree: "MS, Computer Science" },
+//     ],
+//   },
+//   {
+//     university: "University of Tokyo",
+//     location: "Tokyo, Japan",
+//     established: 1877,
+//     departments: [
+//       { name: "Law", chair: "Dr. Kenji Fuji" },
+//       { name: "Medicine", chair: "Dr. Yoko Ono" },
+//     ],
+//     notable_alumni: [
+//       { name: "Shinzo Abe", degree: "Political Science" },
+//       { name: "Kazuo Ishiguro", degree: "Bachelor in English" },
+//     ],
+//   },
+//   {
+//     university: "University of Cape Town",
+//     location: "Cape Town, South Africa",
+//     established: 1829,
+//     departments: [
+//       { name: "Anthropology", chair: "Dr. Nelson Mandela" },
+//       { name: "Astronomy", chair: "Dr. Sarah Fortune" },
+//     ],
+//     notable_alumni: [
+//       { name: "Desmond Tutu", degree: "Master's in Theology" },
+//       { name: "Elon Musk", degree: "Attended, did not graduate" },
+//     ],
+//   },
+// ];
+
+// //მოცემულ ობიექტს გადაურბინეთ ფორ ლუპით და const universityNames = []  <<< ამ არაიში ჩასეტეთ ყველა უნივერისიტეტის სახელი
+// console.log(universityNames); // expected output
+// [
+//   "University of Oxford",
+//   "Harvard University",
+//   "Stanford University",
+//   "University of Tokyo",
+//   "University of Cape Town",
+// ];
+
+// //Bonus davaleba: unda gamoiyenot chanestili for loopi anu ori for loop
+
+// //const departmentNames = []; << ამ არაიში უნდა ჩასეტოთ ყველა დეპარტამენტი
+
+// console.log(departments)[ // expected output :
+//   ("Physics",
+//   "Philosophy",
+//   "Economics",
+//   "Biology",
+//   "Computer Science",
+//   "Chemical Engineering",
+//   "Law",
+//   "Medicine",
+//   "Anthropology",
+//   "Astronomy")
+// ];

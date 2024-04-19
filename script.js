@@ -344,42 +344,42 @@ calcTip(bills[2]);
 //   `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
 // );
 
-const jonas = {
-  firstName: "Jonas",
-  lastName: "Schmedtmann",
-  birthYear: 1991, //we can put any expression
-  job: "teacher",
-  friends: ["Michael", "Peter", "Steven"],
-  hasDriversLicense: true,
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   birthYear: 1991, //we can put any expression
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriversLicense: true,
 
-  // calcAge: function (birthYear) {
-  //   return 2037 - birthYear;
-  // },
+//   // calcAge: function (birthYear) {
+//   //   return 2037 - birthYear;
+//   // },
 
-  // calcAge: function () {
-  //   console.log(this);
-  //   return 2037 - this.birthYear;
-  // },
+//   // calcAge: function () {
+//   //   console.log(this);
+//   //   return 2037 - this.birthYear;
+//   // },
 
-  calcAge: function () {
-    this.age = 2037 - this.birthYear;
-    return this.age;
-  },
+//   calcAge: function () {
+//     this.age = 2037 - this.birthYear;
+//     return this.age;
+//   },
 
-  getSummary: function () {
-    return `${this.firstName} is a ${this.calcAge()}-year old ${
-      this.job
-    }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
-  },
-};
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${
+//       this.job
+//     }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+//   },
+// };
 
-console.log(jonas.calcAge());
-// console.log(jonas["calcAge"](jonas.birthYear));
+// console.log(jonas.calcAge());
+// // console.log(jonas["calcAge"](jonas.birthYear));
 
-//Challenge
-// "Jonas is a 46-year old teacher, and he has a/no driver's license."
+// //Challenge
+// // "Jonas is a 46-year old teacher, and he has a/no driver's license."
 
-console.log(jonas.getSummary());
+// console.log(jonas.getSummary());
 
 const mentors = {
   firstName: "levani",
@@ -667,4 +667,106 @@ if (mark.bmi > john.bmi) {
   console.log(
     `${john.fullName}'s BMI (${john.bmi} is higher than ${mark.fullName}'s (${mark.bmi})!)`
   );
+}
+
+// FOR LOOPS:
+
+// console.log("Lifting weights repetition 1 ");
+// console.log("Lifting weights repetition 2 ");
+// console.log("Lifting weights repetition 3 ");
+// console.log("Lifting weights repetition 4 ");
+// console.log("Lifting weights repetition 5 ");
+// console.log("Lifting weights repetition 6 ");
+// console.log("Lifting weights repetition 7 ");
+// console.log("Lifting weights repetition 8 ");
+// console.log("Lifting weights repetition 9 ");
+// console.log("Lifting weights repetition 10 ");
+
+//for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep}`);
+}
+
+const jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+
+const types = [];
+
+//console.log(jonas[0]);
+//console.log(jonas[1]);
+//...
+//console.log(jonas[4]);
+//jonas[6] doesn NOT exist
+
+// for (let i = 0; i < jonasArray.length; i++) {
+//   //reading from jonas array
+//   // console.log(jonasArray[i], typeof jonasArray[i]);
+
+//   //fillinf types array
+//   // types[i] = typeof jonasArray[i];
+//   types.push(typeof jonasArray[i]);
+// }
+// console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages[i] = 2037 - years[i];
+}
+console.log(ages);
+
+//constinue and break
+console.log("---- ONLY STRINGS ----");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] !== "string") continue;
+  // continue skips the current iterations and starts the next one immidiately
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+console.log("---- BREAK WITH NUMBER ----");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] === "number") break;
+  // continue skips the current iterations and starts the next one immidiately
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+for (let i = jonasArray.length - 1; i >= 0; i--) {
+  console.log(i, jonasArray[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`-------Starting exercise ${exercise}`);
+
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`${exercise}: Lifting weight repetition ${rep}`);
+  }
+}
+
+// WHILE LOOP
+//while loop need only condition to work, it doesn't necessary need a counter
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weight repetition ${rep}`);
+// }
+
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(`WHILE LOOP: Lifting weight repetition ${rep}`);
+//   rep++;
+// }
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+
+  if (dice === 6) console.log("Loop is about to edn...");
 }
