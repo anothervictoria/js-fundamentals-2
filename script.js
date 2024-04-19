@@ -291,55 +291,380 @@ calcTip(bills[2]);
 
 //But in arrays,there is no way of giving these elements a name. And so we can't reference them by name,but only by their o rder number in which they appear in the array.
 
-const jonasArray = [
-  "Jonas",
-  "Schmedtmann",
-  2037 - 1991,
-  "teacher",
-  ["Michael", "Peter", "Steven"],
-];
+// const jonasArray = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+// ];
 
-//we have the object which contains 5 key-value pairs
-// each of these keys is also calles a property. So we say that this object here which is called Jonas has five properties. So property first name with the value 'Jonas'.
+// //we have the object which contains 5 key-value pairs
+// // each of these keys is also calles a property. So we say that this object here which is called Jonas has five properties. So property first name with the value 'Jonas'.
+
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   age: 2037 - 1991, //we can put any expression
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+// };
+
+// console.log(jonas);
+
+// //to get the property value we use dot notation. Needs real property name.
+// console.log(jonas.lastName);
+
+// //we use or bracket notation
+// console.log(jonas["lastName"]);
+
+// const nameKey = "Name";
+// console.log(jonas["first" + nameKey]);
+// console.log(jonas["last" + nameKey]);
+
+// const interestedIn = prompt(
+//   "What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends"
+// );
+// if (jonas[interestedIn]) {
+//   console.log(jonas[interestedIn]);
+// } else {
+//   console.log(
+//     "Wrong request! Choose between firstName, lastName, age, job, and friends"
+//   );
+// }
+
+// //adding properties to the object
+// jonas.location = "Portugal";
+// jonas["twitter"] = "@jonasschmedtman";
+// console.log(jonas);
+
+// //Challenge
+// //'Jonas has 3 friends, and his best friend is called Michael'
+// console.log(
+//   `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
+// );
 
 const jonas = {
   firstName: "Jonas",
   lastName: "Schmedtmann",
-  age: 2037 - 1991, //we can put any expression
+  birthYear: 1991, //we can put any expression
   job: "teacher",
   friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // },
+
+  // calcAge: function () {
+  //   console.log(this);
+  //   return 2037 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+  },
 };
 
-console.log(jonas);
-
-//to get the property value we use dot notation. Needs real property name.
-console.log(jonas.lastName);
-
-//we use or bracket notation
-console.log(jonas["lastName"]);
-
-const nameKey = "Name";
-console.log(jonas["first" + nameKey]);
-console.log(jonas["last" + nameKey]);
-
-const interestedIn = prompt(
-  "What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends"
-);
-if (jonas[interestedIn]) {
-  console.log(jonas[interestedIn]);
-} else {
-  console.log(
-    "Wrong request! Choose between firstName, lastName, age, job, and friends"
-  );
-}
-
-//adding properties to the object
-jonas.location = "Portugal";
-jonas["twitter"] = "@jonasschmedtman";
-console.log(jonas);
+console.log(jonas.calcAge());
+// console.log(jonas["calcAge"](jonas.birthYear));
 
 //Challenge
-//'Jonas has 3 friends, and his best friend is called Michael'
-console.log(
-  `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
-);
+// "Jonas is a 46-year old teacher, and he has a/no driver's license."
+
+console.log(jonas.getSummary());
+
+const mentors = {
+  firstName: "levani",
+  lastName: "khaburzania",
+  age: 26,
+  students: [
+    { firstName: "Ana", lastName: "Petrosyan" },
+    { firstName: "Natalia", lastName: "Khachatryan" },
+    { firstName: "Armen", lastName: "Sargsyan" },
+  ],
+};
+
+for (let i = 0; i < mentors.students.length; i++) {
+  const student = mentors.students[i];
+  console.log(`${student.firstName} ${student.lastName}`);
+  // console.log(`jjhjh`);
+}
+
+const settings = {
+  logo: "logos misamarti",
+  title: "fake website",
+  innerContent: {
+    intro: "This is a fake website created",
+    section: {
+      sectionTitle: "seqciis title",
+      paragraphs: [
+        {
+          text: "hello world text",
+          title: { en: "english title", ka: "ქართული თაითლი" },
+        },
+        {
+          text: "another text",
+          title: { en: "english title", ka: "ჩვენი მიზანი" },
+        },
+      ],
+    },
+  },
+};
+
+console.log(settings.innerContent.section.paragraphs[1].title["ka"]);
+
+// const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
+
+// //თქვენი დავალებაა ამ მასივიდან ამოიღოთ პირველი 5 ელემენტი და ჩაწეროთ მასივში:
+// const firstFive = [];
+
+// for (let i = 0; i < 5; i++) {
+//   firstFive.push(array[i]);
+// }
+
+// console.log(firstFive);
+
+//2 DAVALEBA
+
+// const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
+
+//თქვენი დავალებაა ამ მასივიდან ამოიღოთ ბოლო 5 ელემენტი და ჩაწეროთ მასივში:
+// const lastFive = [];
+
+// const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
+
+// for (let i = array.length - 5; i < array.length; i++) {
+//   lastFive.push(array[i]);
+// }
+
+// console.log(lastFive);
+
+//3 DAVALEBA
+
+// const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
+// //თქვენი დავალებაა ამ მასივიდა ამოიღოთ ყველა ელემენტი გარდა პირველი 2-ისა და ჩაწეროთ მასივში:
+// const newArray = [];
+
+// for (let i = 2; i < array.length; i++) {
+//   newArray.push(array[i]);
+// }
+
+// console.log(newArray);
+
+//4 DAVALEBA
+
+// const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
+// //თქვენი დავალებაა ამ მასივიდა ამოიღოთ ყველა ელემენტი გარდა ბოლო 2-ისა და ჩაწეროთ მასივში:
+
+// const newArray = [];
+
+// for (let i = 0; i < array.length - 2; i++) {
+//   newArray.push(array[i]);
+// }
+
+// console.log(newArray);
+
+//AXALI METODI
+
+//1 davaleba
+// const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
+
+// //თქვენი დავალებაა ამ მასივიდან ამოიღოთ პირველი 5 ელემენტი და ჩაწეროთ მასივში:
+// const firstFive = [];
+
+// for (let i = 0; i < 5; i++) {
+//   firstFive[firstFive.length] = array[i];
+// }
+// console.log(firstFive);
+
+//2 DAVALEBA
+
+//თქვენი დავალებაა ამ მასივიდან ამოიღოთ ბოლო 5 ელემენტი და ჩაწეროთ მასივში:
+// const lastFive = [];
+
+// const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
+
+// for (let i = array.length - 5; i < array.length; i++) {
+//   lastFive[lastFive.length] = array[i];
+// }
+// console.log(lastFive);
+
+//3 DAVALEBA
+
+// const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
+// //თქვენი დავალებაა ამ მასივიდა ამოიღოთ ყველა ელემენტი გარდა პირველი 2-ისა და ჩაწეროთ მასივში:
+// const newArray = [];
+
+// for (let i = 2; i < array.length; i++) {
+//   newArray[newArray.length] = array[i];
+// }
+
+// console.log(newArray);
+
+//4 DAVALEBA
+
+// const array = ["Hi", "Hello", "Ola", "Aloha", "Privet", "Gamarjoba"];
+// //თქვენი დავალებაა ამ მასივიდა ამოიღოთ ყველა ელემენტი გარდა ბოლო 2-ისა და ჩაწეროთ მასივში:
+
+// const newArray = [];
+
+// for (let i = 0; i < array.length - 2; i++) {
+//   newArray[newArray.length] = array[i];
+// }
+
+// console.log(newArray);
+
+/* Let's go back to Mark and John comparing their BMIs!
+
+This time, let's use objects to implement the calculations! Remember: BMI = mass / (height * height) (mass in kg and height in meters).
+
+Your tasks:
+
+For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith). Name these objects as mark and john, and their properties exactly as fullName, mass and height.
+
+Create a calcBMI method on each object to calculate the BMI (the same method on both objects). Assign the BMI value to a property called bmi (lowercase), and also return it from the method.
+
+Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!".
+
+TEST DATA: Marks weighs 78 kg and is 1.69 m tall. John weighs 92 kg and is 1.95 m tall.
+
+👋 OPTIONAL: You can watch my solution in video format in the next lecture
+
+IMPORTANT: The ** operator is not supported in this editor. Please make sure to use exactly this formula mass / (height * height), and not this one mass / (height ** 2). */
+
+// const mark = {
+//   fullName: "Mark Miller",
+//   mass: 78,
+//   height: 1.69,
+
+//   bmi: function calcBMI() {
+//     const bmi = this.mass / (this.height * this.height);
+//     // console.log(bmi);
+//     return bmi;
+//   },
+// };
+
+// console.log(mark.bmi);
+
+// const john = {
+//   fullName: "John Smith",
+//   mass: 92,
+//   height: 1.95,
+//   // calcBMI: function () {
+//   //   const bmi = this.mass / (this.height * this.height);
+//   //   // console.log(bmi);
+//   //   return bmi;
+//   // },
+//   bmi: function calcBMI() {
+//     const bmi = this.mass / (this.height * this.height);
+//     // console.log(bmi);
+//     return bmi;
+//   },
+// };
+
+// console.log(john.bmi);
+
+// if (john.bmi > mark.bmi) {
+//   console.log(
+//     `${john.fullName}'s BMI (${john.bmi} is higher than ${mark.fullName}'s (${mark.bmi})!)`
+//   );
+// } else {
+//   console.log(
+//     `${mark.fullName}'s BMI (${mark.bmi} is higher than ${john.fullName}'s (${john.bmi})!)`
+//   );
+// }
+
+// const mark = {
+//   fullName: "Mark Miller",
+//   mass: 78,
+//   height: 1.69,
+
+//   calcBMI: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//     // console.log(bmi);
+//     return this.bmi;
+//   },
+// };
+
+// console.log(mark.calcBMI());
+
+// const john = {
+//   fullName: "John Smith",
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//     // console.log(bmi);
+//     return this.bmi;
+//   },
+// };
+
+// console.log(john.calcBMI());
+
+// if (mark.calcBMI() > john.calcBMI()) {
+//   console.log(
+//     `${mark.fullName}'s BMI (${mark.calcBMI()} is higher than ${
+//       john.fullName
+//     }'s BMI(${john.calcBMI()})!)`
+//   );
+//   // console.log(
+//   //   `${john.fullName}'s BMI (${john.calcBMI()} is higher than ${
+//   //     mark.fullName
+//   //   }'s BMI(${mark.calcBMI()})!)`
+//   // );
+// } else {
+//   // console.log(
+//   //   `${mark.fullName}'s BMI (${mark.calcBMI()} is higher than ${
+//   //     john.fullName
+//   //   }'s BMI(${john.calcBMI()})!)`
+//   // );
+//   console.log(
+//     `${john.fullName}'s BMI (${john.calcBMI()} is higher than ${
+//       mark.fullName
+//     }'s BMI(${mark.calcBMI()})!)`
+//   );
+// }
+
+const mark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    // console.log(bmi);
+    return this.bmi;
+  },
+};
+
+const john = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    // console.log(bmi);
+    return this.bmi;
+  },
+};
+
+mark.calcBMI();
+john.calcBMI();
+
+if (mark.bmi > john.bmi) {
+  console.log(
+    `${mark.fullName}'s BMI (${mark.bmi} is higher than ${john.fullName}'s (${john.bmi})!)`
+  );
+} else if (john.bmi > mark.bmi) {
+  console.log(
+    `${john.fullName}'s BMI (${john.bmi} is higher than ${mark.fullName}'s (${mark.bmi})!)`
+  );
+}
