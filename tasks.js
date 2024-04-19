@@ -104,75 +104,81 @@
 
 //9 DAVALEBA
 
-// [
-//   {
-//     university: "University of Oxford",
-//     location: "Oxford, England",
-//     established: 1096,
-//     departments: [
-//       { name: "Physics", chair: "Dr. Emily Stark" },
-//       { name: "Philosophy", chair: "Dr. John Locke" },
-//     ],
-//     notable_alumni: [
-//       { name: "Stephen Hawking", degree: "PhD, Physics" },
-//       { name: "Oscar Wilde", degree: "BA, English" },
-//     ],
-//   },
-//   {
-//     university: "Harvard University",
-//     location: "Cambridge, MA, USA",
-//     established: 1636,
-//     departments: [
-//       { name: "Economics", chair: "Dr. Lisa Genova" },
-//       { name: "Biology", chair: "Dr. Charles Darwin" },
-//     ],
-//     notable_alumni: [
-//       { name: "Barack Obama", degree: "JD, Law" },
-//       { name: "Mark Zuckerberg", degree: "Dropped out" },
-//     ],
-//   },
-//   {
-//     university: "Stanford University",
-//     location: "Stanford, CA, USA",
-//     established: 1885,
-//     departments: [
-//       { name: "Computer Science", chair: "Dr. Ada Lovelace" },
-//       { name: "Chemical Engineering", chair: "Dr. Marie Curie" },
-//     ],
-//     notable_alumni: [
-//       { name: "Elon Musk", degree: "BS, Physics" },
-//       { name: "Reed Hastings", degree: "MS, Computer Science" },
-//     ],
-//   },
-//   {
-//     university: "University of Tokyo",
-//     location: "Tokyo, Japan",
-//     established: 1877,
-//     departments: [
-//       { name: "Law", chair: "Dr. Kenji Fuji" },
-//       { name: "Medicine", chair: "Dr. Yoko Ono" },
-//     ],
-//     notable_alumni: [
-//       { name: "Shinzo Abe", degree: "Political Science" },
-//       { name: "Kazuo Ishiguro", degree: "Bachelor in English" },
-//     ],
-//   },
-//   {
-//     university: "University of Cape Town",
-//     location: "Cape Town, South Africa",
-//     established: 1829,
-//     departments: [
-//       { name: "Anthropology", chair: "Dr. Nelson Mandela" },
-//       { name: "Astronomy", chair: "Dr. Sarah Fortune" },
-//     ],
-//     notable_alumni: [
-//       { name: "Desmond Tutu", degree: "Master's in Theology" },
-//       { name: "Elon Musk", degree: "Attended, did not graduate" },
-//     ],
-//   },
-// ];
+const universities = [
+  {
+    university: "University of Oxford",
+    location: "Oxford, England",
+    established: 1096,
+    departments: [
+      { name: "Physics", chair: "Dr. Emily Stark" },
+      { name: "Philosophy", chair: "Dr. John Locke" },
+    ],
+    notable_alumni: [
+      { name: "Stephen Hawking", degree: "PhD, Physics" },
+      { name: "Oscar Wilde", degree: "BA, English" },
+    ],
+  },
+  {
+    university: "Harvard University",
+    location: "Cambridge, MA, USA",
+    established: 1636,
+    departments: [
+      { name: "Economics", chair: "Dr. Lisa Genova" },
+      { name: "Biology", chair: "Dr. Charles Darwin" },
+    ],
+    notable_alumni: [
+      { name: "Barack Obama", degree: "JD, Law" },
+      { name: "Mark Zuckerberg", degree: "Dropped out" },
+    ],
+  },
+  {
+    university: "Stanford University",
+    location: "Stanford, CA, USA",
+    established: 1885,
+    departments: [
+      { name: "Computer Science", chair: "Dr. Ada Lovelace" },
+      { name: "Chemical Engineering", chair: "Dr. Marie Curie" },
+    ],
+    notable_alumni: [
+      { name: "Elon Musk", degree: "BS, Physics" },
+      { name: "Reed Hastings", degree: "MS, Computer Science" },
+    ],
+  },
+  {
+    university: "University of Tokyo",
+    location: "Tokyo, Japan",
+    established: 1877,
+    departments: [
+      { name: "Law", chair: "Dr. Kenji Fuji" },
+      { name: "Medicine", chair: "Dr. Yoko Ono" },
+    ],
+    notable_alumni: [
+      { name: "Shinzo Abe", degree: "Political Science" },
+      { name: "Kazuo Ishiguro", degree: "Bachelor in English" },
+    ],
+  },
+  {
+    university: "University of Cape Town",
+    location: "Cape Town, South Africa",
+    established: 1829,
+    departments: [
+      { name: "Anthropology", chair: "Dr. Nelson Mandela" },
+      { name: "Astronomy", chair: "Dr. Sarah Fortune" },
+    ],
+    notable_alumni: [
+      { name: "Desmond Tutu", degree: "Master's in Theology" },
+      { name: "Elon Musk", degree: "Attended, did not graduate" },
+    ],
+  },
+];
 
-// //მოცემულ ობიექტს გადაურბინეთ ფორ ლუპით და const universityNames = []  <<< ამ არაიში ჩასეტეთ ყველა უნივერისიტეტის სახელი
+// const universityNames = [];
+// for (let i = 0; i < universities.length; i++) {
+//   universityNames[i] = universities[i].university;
+// }
+// console.log(universityNames);
+
+//მოცემულ ობიექტს გადაურბინეთ ფორ ლუპით და const universityNames = []  <<< ამ არაიში ჩასეტეთ ყველა უნივერისიტეტის სახელი
 // console.log(universityNames); // expected output
 // [
 //   "University of Oxford",
@@ -182,10 +188,23 @@
 //   "University of Cape Town",
 // ];
 
-// //Bonus davaleba: unda gamoiyenot chanestili for loopi anu ori for loop
+//Bonus davaleba: unda gamoiyenot chanestili for loopi anu ori for loop
 
-// //const departmentNames = []; << ამ არაიში უნდა ჩასეტოთ ყველა დეპარტამენტი
+const departmentNames = [];
+let counter = 0;
+//<< ამ არაიში უნდა ჩასეტოთ ყველა დეპარტამენტი
 
+for (let i = 0; i < universities.length; i++) {
+  // console.log(universities[i].departments);
+  const departments = universities[i].departments;
+  for (let b = 0; b < departments.length; b++) {
+    departmentNames[counter] = departments[b].name;
+    counter++;
+  }
+}
+console.log(departmentNames);
+
+// const departmentNames = [];
 // console.log(departments)[ // expected output :
 //   ("Physics",
 //   "Philosophy",
